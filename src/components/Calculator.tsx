@@ -41,7 +41,9 @@ export default function Calculator({}) {
                                 productionType.value = "recorded";
                             }}
                         >
-                            With a quick post-production turnaround,
+                            With a quick post-production turnaround, we can edit
+                            footage from the show and get a finished product
+                            back to you within days.
                         </Card>
                     </div>
                 </Field>
