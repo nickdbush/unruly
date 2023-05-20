@@ -10,7 +10,7 @@ const { title, formName, formValue, checked = false } = Astro.props;
 const id = `form-${formName}-${formValue}`;
 ---
 
-<div>
+<label>
     <input
         type="radio"
         class="hidden"
@@ -19,9 +19,8 @@ const id = `form-${formName}-${formValue}`;
         value={formValue}
         checked={checked}
     />
-    <label
-        for={id}
-        class="block h-full border rounded-lg transition-colors cursor-pointer border-neutral-500 hover:bg-neutral-800"
+    <div
+        class="css-card h-full border rounded-lg transition-colors cursor-pointer border-neutral-500 hover:bg-neutral-800"
     >
         <div class="css-title px-4 py-3 transition-colors text-white">
             {title}
@@ -33,19 +32,19 @@ const id = `form-${formName}-${formValue}`;
                 </p>
             )
         }
-    </label>
-</div>
+    </div>
+</label>
 
 <style>
-    input:checked + label {
+    input:checked + .css-card {
         @apply border-yellow-400 bg-neutral-800;
     }
 
-    input:checked + label .css-title {
+    input:checked + .css-card .css-title {
         @apply text-yellow-400;
     }
 
-    input:checked + label .css-body {
+    input:checked + .css-card .css-body {
         @apply text-white border-neutral-600;
     }
 
