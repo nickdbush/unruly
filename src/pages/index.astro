@@ -1,7 +1,42 @@
 ---
 import Page from "../layouts/Page.astro";
+import Calculator from "../components/Calculator";
 ---
 
 <Page title="Home">
-    
+    <main>
+        <section class="max-w-[1000px] mx-auto px-8 mt-12">
+            <div class="text-7xl tracking-tighter leading-none font-bold">
+                <div class="text-yellow-400">UNRULY</div>
+                <div class="text-white">GOOSE</div>
+            </div>
+            <p class="text-2xl mt-6 leading-normal">
+                Elevate your Fringe shows and events with our media production
+                services.
+            </p>
+            <p class="mt-6 leading-normal">
+                Based locally in Edinburgh, Unruly Goose is uniquely positioned
+                to offer live broadcast and show recording for productions at
+                the Fringe Festival. We offer low-cost media services designed
+                to meet the creative and financial needs of shows of all sizes,
+                allowing them to reach and sell to international audiences.
+            </p>
+            <p class="mt-6 leading-normal">
+                We support all manner of requirements, from simple shows that
+                only need one camera to complex productions with live graphics
+                and multiple angles that bring viewers right into the action. We
+                relish a challenge, and will develop a solution that meets your
+                show's specific needs.
+            </p>
+            <p class="mt-6 leading-normal">
+                Share a speficiation with us below or shoot off an email to <a
+                    href="mailto:fringe@unrulygoose.com"
+                    class="text-yellow-400 underline">fringe@unrulygoose.com</a
+                >.
+            </p>
+        </section>
+        <section class="bg-neutral-900 rounded-lg m-8 mt-12">
+            <Calculator client:load />
+        </section>
+    </main>
 </Page>
