@@ -3,9 +3,10 @@ interface Props {
     title: string;
     formName: string;
     formValue: string;
+    checked?: boolean;
 }
 
-const { title, formName, formValue } = Astro.props;
+const { title, formName, formValue, checked = false } = Astro.props;
 const id = `form-${formName}-${formValue}`;
 ---
 
@@ -16,6 +17,7 @@ const id = `form-${formName}-${formValue}`;
         id={id}
         name={formName}
         value={formValue}
+        checked={checked}
     />
     <label
         for={id}

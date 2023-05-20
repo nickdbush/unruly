@@ -51,6 +51,7 @@ import TextArea from "../components/TextArea.astro";
                             title="Live"
                             formName="prod_type"
                             formValue="live"
+                            checked
                         >
                             Offer remote viewers a live broadcast of your show
                             and sell unlimited virtual tickets. Combine multiple
@@ -85,6 +86,7 @@ import TextArea from "../components/TextArea.astro";
                             title="Multi-camera"
                             formName="multi_camera"
                             formValue="true"
+                            checked
                         >
                             Multiple cameras simultaneously record the show from
                             different angles. Cutting between them not only
@@ -104,6 +106,7 @@ import TextArea from "../components/TextArea.astro";
                             title="HD"
                             formName="delivery_res"
                             formValue="hd"
+                            checked
                         />
                         <ChoiceCard
                             title="4K"
@@ -121,6 +124,7 @@ import TextArea from "../components/TextArea.astro";
                         name="name"
                         type="text"
                         autocomplete="name"
+                        autocapitalize="words"
                         required
                     />
                 </Field>
@@ -133,13 +137,19 @@ import TextArea from "../components/TextArea.astro";
                     />
                 </Field>
                 <Field title="Organisation">
-                    <Input name="org" type="text" autocomplete="organization" />
+                    <Input
+                        name="org"
+                        type="text"
+                        autocomplete="organization"
+                        autocapitalize="words"
+                    />
                 </Field>
                 <Field title="Job title">
                     <Input
                         name="role"
                         type="text"
                         autocomplete="organization-title"
+                        autocapitalize="words"
                     />
                 </Field>
                 <Field
