@@ -9,14 +9,20 @@ export default function Calculator({}) {
     const productionType = useSignal<ProductionType>("live");
     const isMultiCamera = useSignal(true);
     const resolution = useSignal<Resolution>("HD");
-    const name = useSignal("");
-    const email = useSignal("");
-    const organisation = useSignal("");
-    const title = useSignal("");
-    const notes = useSignal("");
 
     return (
         <form data-netlify="true" name="fringe" method="POST">
+            <input
+                type="hidden"
+                name="productionType"
+                value={productionType.value}
+            />
+            <input
+                type="hidden"
+                name="isMultiCamera"
+                value={isMultiCamera.value ? "true" : "false"}
+            />
+            <input type="hidden" name="resolution" value={resolution.value} />
             <div class="space-y-6 p-8">
                 <Field title="Production type">
                     <div class="grid sm:grid-cols-2 gap-4">
@@ -102,40 +108,22 @@ export default function Calculator({}) {
             </div>
             <div class="grid sm:grid-cols-2 gap-x-6 gap-y-6 p-8 border-t border-neutral-700">
                 <Field title="Name" required>
-                    <Input
-                        value={name}
-                        type="text"
-                        autoComplete="name"
-                        required
-                    />
+                    <Input type="text" autoComplete="name" required />
                 </Field>
                 <Field title="Email" required>
-                    <Input
-                        value={email}
-                        type="email"
-                        autoComplete="email"
-                        required
-                    />
+                    <Input type="email" autoComplete="email" required />
                 </Field>
                 <Field title="Organisation">
-                    <Input
-                        value={organisation}
-                        type="text"
-                        autoComplete="organization"
-                    />
+                    <Input type="text" autoComplete="organization" />
                 </Field>
                 <Field title="Job title">
-                    <Input
-                        value={title}
-                        type="text"
-                        autoComplete="organization-title"
-                    />
+                    <Input type="text" autoComplete="organization-title" />
                 </Field>
                 <Field
                     title="Dates and times of shows, and other notes"
                     required
                 >
-                    <TextArea value={notes} rows={5} required />
+                    <TextArea rows={5} required />
                 </Field>
                 <Field title="What happens next">
                     <p class="leading-normal">
