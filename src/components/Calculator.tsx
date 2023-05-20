@@ -150,7 +150,7 @@ export default function Calculator({}) {
                     </p>
                 </Field>
             </div>
-            <div class="p-8 border-t border-neutral-700 flex flex-row justify-end space-y-4">
+            <div class="p-8 border-t border-neutral-700 flex flex-col items-end space-y-5">
                 <div data-netlify-recaptcha="true"></div>
                 <button
                     class="rounded-lg text-lg font-bold bg-yellow-400 text-black tracking-tighter py-4 px-6 leading-none"
