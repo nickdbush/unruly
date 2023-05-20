@@ -1,0 +1,53 @@
+---
+interface Props {
+    title: string;
+    formName: string;
+    formValue: string;
+}
+
+const { title, formName, formValue } = Astro.props;
+const id = `form-${formName}-${formValue}`;
+---
+
+<div>
+    <input
+        type="radio"
+        class="hidden"
+        id={id}
+        name={formName}
+        value={formValue}
+    />
+    <label
+        for={id}
+        class="block h-full border rounded-lg transition-colors cursor-pointer border-neutral-500 hover:bg-neutral-800"
+    >
+        <div class="css-title px-4 py-3 transition-colors text-white">
+            {title}
+        </div>
+        {
+            Astro.slots.has("default") && (
+                <p class="css-body px-4 py-3 text-sm transition-colors leading-normal border-t text-neutral-300 border-neutral-700">
+                    <slot />
+                </p>
+            )
+        }
+    </label>
+</div>
+
+<style>
+    input:checked + label {
+        @apply border-yellow-400 bg-neutral-800;
+    }
+
+    input:checked + label .css-title {
+        @apply text-yellow-400;
+    }
+
+    input:checked + label .css-body {
+        @apply text-white border-neutral-600;
+    }
+
+    label:hover .css-body {
+        @apply border-neutral-600;
+    }
+</style>
